@@ -3,6 +3,7 @@
 ## Overview
 This is a project created as a part of the Computer Science and Software Engineering course at High Technology High School (Junior Year).
 It was intended to teach web design and development using the listed languages.
+This is a copy of a project from https://github.com/CSE-HighTechHighSchool/WS22_1/ (private repository).
 
 ## Languages
 - HTML
