@@ -1,0 +1,833 @@
+/*Resetting Styles, Setting Font Family, Declaring Color Variables*/
+
+* {
+    all:revert;
+    font-family: sans-serif;
+    margin:0;
+    --color-main-light: rgb(206, 231, 240);
+    --color-main-dark: rgba(4, 20, 94, 0.9);
+    --color-medium: rgba(9, 45, 206, 0.651); 
+    --color-dark-shade: rgba(4, 4, 32, 0.7);
+    --color-semi-transparent: rgba(180, 189, 231, 0.4);
+    --layer-color: rgba(27, 46, 129, 0.644);
+}
+
+/*General Styles*/
+
+/*General Body Style and Background Image*/
+body {
+    --body-bg: url('/WS22_1/img/bg-img-sign.jpg');
+    background-color: rgba(153, 204, 255, 0.4);
+}
+
+/*Links Have No Text Decoration and Default to White*/
+a {
+    text-decoration:none;
+    color:white;
+}
+
+/*Bodies With Background Images*/
+
+/*General Background Image Style*/
+.body-bg-img {
+    background-image: var(--body-bg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    position:fixed;
+}
+
+/*Pages Backgrounds*/
+
+/*Fixed Background Image*/
+.bg-img {
+    position:fixed;
+    top:0;
+    min-height:100vh;
+    min-width:100vw;
+    z-index:-2;
+    
+    background-position:center;
+    background-size:cover;
+}
+
+/*Home Page Background Image*/
+.bg-img-main {
+    --bg-img: url('/WS22_1/img/nature-img-1.jpg');
+    background-image: var(--bg-img);
+    transition-duration: 0.3s;
+}
+
+/*Sign In and Sign Up Pages Background Image*/
+.bg-img-sign {
+    --bg-img: url('/WS22_1/img/bg-img-sign.jpg');
+    background-image: var(--bg-img);
+}
+
+/*Mood Tracker Background Image*/
+.bg-img-mood {
+    --bg-img: url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8NGslMjBsYW5kc2NhcGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80') !important;
+    background-image: var(--bg-img);
+}
+
+/*Darker Layer Over Background Image on Home Page*/
+.layer {
+    background-color: var(--layer-color);
+    height:100vh;
+    width:100vw;
+    position:fixed;
+    z-index:-1;
+}
+
+/*Header and Nav Bar*/
+
+/*General Header Style*/
+header {
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    
+    box-sizing:border-box;
+    width:100vw;
+    height:53px;
+    padding:15px;
+
+    z-index:20;
+    font-size:15px;
+    
+    display:flex;
+    align-items:center;
+    
+    color:var(--color-main-light);
+    background-color: var(--color-main-dark);
+
+    --header-font-size: 1.1rem;
+}
+
+/*Audio Controls Do Not Display*/
+audio {
+    display:none;
+}
+
+/*Logo In Header*/
+
+/*Logo Container to Ensure Proper Formatting and Centering*/
+.logo {
+    display:inline-flex;
+    justify-content:center;
+    align-content:center;
+}
+
+/*Logo Itself*/
+.logo img {
+    width: 150px;
+}
+
+/*Nav Bar and Links for Moving Between Pages*/
+
+/*Resetting Materialize Nav Styles*/
+nav {
+    all:revert;
+}
+
+/*Nav Section with Dropdown, Sign In, and Sign Up*/
+
+/*General Link Styles*/
+.link {
+    white-space: nowrap;
+    
+    display:inline-flex;
+    align-items:center;
+    
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin:0;
+    height:100%;
+    
+    color: white;
+    font-size: var(--header-font-size);
+    text-decoration:none;
+    transition:0.2s;
+}
+
+/*Links Container*/
+.nav-links {
+    display:inline-flex;
+    height:53px;
+    position:absolute;
+    right:20px;
+    margin:0;
+}
+
+/*Nav Bar Font Size, Weight, and Color*/
+.nav-links a, .nav-links h5 {
+    font-size:15px;
+    font-weight:100;
+}
+
+/*Dropdown Styles*/
+.dropdown {
+    position:relative;
+    display:flex;
+}
+
+/*Primary Dropdown*/
+.primary {
+    display:inline-flex;
+    flex-direction:column;
+    position:absolute;
+    align-items:flex-end;
+    align-content:flex-end;
+    justify-items:flex-end;
+    justify-content:flex-end;
+    background-color: var(--color-main-dark);
+    top:53px;
+    right:0;
+    height:fit-content;
+    padding:0;
+}
+
+/*Titles of Secondary Dropdowns in Primary Dropdown*/
+
+/*Secondary Dropdown Titles Take Up Full Width of Primary Dropdown*/
+.title-ment, .title-ther {
+    box-sizing:border-box;
+    width:100%;
+    justify-content:flex-end;
+}
+
+/*Mental Health Title */
+.title-ment{
+    padding:10px 10px 5px;
+}
+
+/*Therapy Games Title */
+.title-ther{
+    padding: 5px 10px 10px;
+    width:100%;
+}
+
+/*Secondary Dropdowns*/
+
+/*Secondary Dropdown Container*/
+.secondary {
+    display:inline-flex;
+    flex-direction:column;
+    padding:0;
+}
+
+/*Individual Secondary Dropdowns (Mental Health Resources and Therapy Games)*/
+.ment, .ther {
+    display:inline-flex;
+    flex-direction:column;
+
+    position:absolute;
+    top:53px;
+    left:0;
+
+    height:fit-content;
+    padding:0;
+
+    background-color: var(--color-main-dark);
+    font-size:var(--header-font-size);
+}
+
+/*Offsets Therapy Games Secondary Dropdown to be in Line with Corresponding Title in Primary Dropdown*/
+.ther {
+    top:90px;
+}
+
+/*Links in Dropdowns Take Up Dropdown's Full Width*/
+.mood-tracker, .resources, .importance, .effects,
+.matching, .food-snake, .twenforate {
+    width: 100%;
+    padding: 2px 6px;
+}
+
+/*Title and Image Choices on Home Page*/
+
+/*Div of Title and Image Choices on Home Page*/
+#title-div {
+    height:480px;
+    position:fixed;
+    width:100%;
+    top:20px;
+    display:flex;
+    align-content:center;
+}
+
+/*Title Container*/
+#title {
+    flex-basis:100%;
+    display:inline-flex;
+    box-sizing: border-box;
+    align-items:center;
+    justify-content:center;
+    transition: 0.2s;
+}
+
+/*Brealief Logo Title on Home Page*/
+#title img{
+    width: 60%;
+    max-width:500px;
+    min-width:300px;
+}
+
+/*Choices for Background Image Selection*/
+
+/*Choice List*/
+#bg-choices{
+    display: inline-flex;
+    flex-direction:column;
+    position: absolute;
+    top: 40px;
+    right:15px;
+}
+
+/*Individual Choices*/
+.bg-choice {
+    width:80px;
+    height:80px;
+    margin:3%;
+    border-radius: 20%;
+    box-sizing: border-box;
+    transition:0.2s;
+}
+
+/*Default Background Is Not Immediately Displayed as a Choice*/
+#choice-1 {
+    display:none;
+}
+
+/*Instructions for Selecting Background Choice, Defaults as Hidden*/
+#bg-choice-instructions{
+    position:absolute;
+    z-index: 100;
+    visibility:hidden;
+
+    box-sizing: border-box;
+    width: 20rem;
+    height:fit-content;
+    padding:5px 0 5px 10px;
+    border-radius: 10px;
+
+    background-color: rgb(206, 231, 240, 0.8);
+    color: var(--color-main-dark);
+    
+    font-size: 0.9rem;
+}
+
+/*Background Style for Main Content (Under Title and Image Choices) on Home Page*/
+
+/*Main Page Content Underneath Title Div and Above Footer*/
+.main-content{
+    position:relative;
+    top:500px;
+    display:flex;
+    flex-direction:column;
+}
+
+/*Containers for Carousels and Carousel Titles*/
+.index-main {
+    background-color: rgba(0,0,0, 0.6);
+    display:flex;
+    flex-direction: column;
+}
+
+/*Inspirational Quote*/
+aside {
+    height:fit-content;
+    text-align:center;
+    color:white;
+    font-size:45px;
+    padding:5%;
+}
+
+/*Carousels*/
+
+/*Carousel Labels and Anchors*/
+
+/*Labels Above Carousels*/
+h4 {
+    background-color: var(--color-medium);
+    color: whitesmoke;
+    border: 5px solid var(--color-main-dark);
+    margin:10px 2% 0;
+    padding:10px;
+   
+    text-align: center;
+}
+
+/*Mental Health Carousel Anchor Just Above Caoursel Label*/
+#mental-health {
+    /*Offsets mental health carousel anchor to adjust for fixed header*/
+    padding-top:80px;
+    margin-top:-80px;
+
+    /*Places offset below image choices to still allow for user to click on them*/
+    z-index:-1;
+}
+
+/*General Carousel Styles*/
+
+/*Carousel Container*/
+.carousel {
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding:0;
+    margin:0;
+    height:300px;
+}
+
+/*Carousel Item Styles*/
+.carousel-item{
+    all:revert;
+
+    position:relative;
+    width:100vw;
+    padding:20px;
+    border:none;
+    border-radius: 10%;
+    
+    background-color: var(--color-main-dark);
+    color: var(--color-main-light);
+}
+
+/*Images in Carousel Items*/
+.carousel-item img{
+    width: 200px; 
+    height: 200px;
+    border-radius: 8%;
+}
+
+/*Buttons for Shifting Carousel*/
+
+/*Div Containing Buttons*/
+.carousel-btns {
+    position:relative;
+    top:120px;
+    z-index:15;
+
+    display:flex;
+    align-self:center;
+    
+    width: 400px;
+}
+
+/*Default Button Styles*/
+.btn {
+    position:absolute;
+    padding: 0.5rem 1rem;
+
+    background-color:var(--color-main-dark);
+    color: var(--color-main-light);
+    border:2px solid var(--color-main-light);
+    font-size:2rem;
+
+    transition: 0.3s;
+}
+
+/*Buttons Invert Color on Hover*/
+.btn:hover {
+    background-color: var(--color-main-light);
+    color: var(--color-main-dark);
+}
+
+/*Left Buttons Shifted Left*/
+#left-1, #left-2 {
+    left:0;
+}
+
+/*Right Buttons Shifted Right*/
+#right-1, #right-2 {
+    right:0;
+}
+
+/*Forms*/
+
+/*Form Containers with Background Shading*/
+.form-sign, .form-mood {
+    position:relative;
+    padding: 2.5%;
+    width:50%;
+    min-width:380px;
+    height:fit-content;
+    margin:100px auto;
+    background-color: var(--color-dark-shade);
+    color:whitesmoke;
+}
+
+/*Form Title Margin*/
+.form-sign h1, .form-mood h1 {
+    margin:0 0 20px;
+}
+
+/*Font Size and Color of Main Form Content*/
+form {
+    font-size: 30px;
+}
+
+/*Labels in Form*/
+form label{
+    color: white;
+}
+
+/*Font Color of Text Entered by User*/
+input {
+    color:white;    
+}
+
+/*Mood Tracker Form Styles*/
+
+/*Bottom Margin of Form*/
+.form-mood {
+    margin-bottom:100px;
+}
+
+/*Title Padding*/
+.form-mood h1 {
+    padding: 10px 10px 0;
+}
+
+/*Container for Form and Buttons on Mood Tracker Page*/
+#moodtracker{
+    display: flex;
+    justify-content: left;
+}
+
+/*Paragraph Styles in Mood Tracker Form*/
+#moodform p{
+    font-size: 20px;
+}
+
+/*Font Size of Input for Moodtracker*/
+#moodform input[type*="text"] {
+    font-size: 22px; 
+}
+
+/*Displays Meaning of Selected Mood Tracker Image*/
+#select{
+    height: 0px; 
+    font-size: 22px; 
+}
+
+/*Styling for Image Choices on Mood Tracker Form*/
+
+/*Container for Rows*/
+.buttons{
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 5px; 
+    justify-content: center;
+}
+
+/*Container for Image Choices*/
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+/*Image Choices*/
+.element{
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px; 
+}
+
+/*Images Inside Image Choices with Mood Meanings*/
+.element img{
+    display: block;
+    height: 100px;
+    width: 100px; 
+    border-radius: 20%;
+    transition: .3s;
+    margin: auto;
+}
+
+/*Paragraph Styles in Form*/
+#moodform p{
+    font-size: 20px;
+}
+/*Div Container Styles in Form*/
+#select{
+    height: 0px; 
+    font-size: 22px; 
+}
+
+/*Label for Form*/
+form label{
+    font-size: 30px; 
+    color: white;
+}
+
+/*Container for Form and Buttons*/
+#moodtracker{
+    display: flex;
+    justify-content: left;
+    flex-wrap: none;
+}
+
+/*Input for Moodtracker*/
+#moodform input[type*="text"] {
+    font-size: 22px; 
+}
+
+/*Submit Buttons on Forms*/
+
+/*Default Submit Button Styles*/
+input[type*="submit"] {
+    all:revert;
+    margin: 4% 0 0 0;
+    padding:1%;
+    border-radius: 20px;
+    font-size:20px;
+    border:none;
+    background-color:var(--color-main-light);
+    transition: 0.3s;
+    width:200px;
+} 
+
+/*Submit Buttons Invert Color on Hover*/
+input[type*="submit"]:hover{
+    background-color: var(--color-main-dark);
+    color:white;
+}
+
+/*Article and Game Titles*/
+
+/*Title Section*/
+.page-title {
+    padding: 15px;
+    margin-top: 70px;
+    margin-left:0;
+    margin-right:0;
+    border-left:none;
+    border-right:none;
+
+    background-color: var(--color-medium);
+    color: whitesmoke;
+    border-top: 5px solid var(--color-main-dark);
+    border-bottom: 5px solid var(--color-main-dark);
+   
+    text-align: center;
+}
+
+/*Main Title*/
+.page-title h2 {
+    font-size:35px;
+    font-weight:500;
+    margin:0;
+}
+
+/*Description Under Title*/
+.page-title em {
+    font-size:18px;
+    font-weight:100;
+}
+
+/*Articles*/
+
+/*Images on Article Pages*/
+.artimage{
+    display:block;
+    width: 60vw;
+    margin: 40px auto;
+}
+
+/*Articles are Centered*/
+article {
+    margin: 20px auto 50px;
+    width: 60vw;
+}
+
+/*Article Paragraphs, including Font Style that Slightly Differs from Rest of Site*/
+article p{
+    display:block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+/*Mental Health Resources Article*/
+
+/*Resources Container*/
+.resources-list{
+    display:block;
+}
+
+/*Individual Resource Links*/
+.resources-list a{
+    text-decoration:none;
+    color:var(--color-main-dark);
+}
+
+/*Resource Links Brighten on Hover*/
+.resources-list a:hover{
+    color:rgb(20, 116, 180);
+    transition:0.3s;
+}
+
+/*Resource Descrptions*/
+.artr{
+    display:block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 10px 0 30px;
+}
+
+/*Games*/
+
+/*Container for Game Itself and Start Game Layer*/
+.game-container {
+    position:relative;
+    margin: 20px auto;
+    width:fit-content;
+    height:fit-content;
+}
+
+/*Embedded Game Container to Create Dark Blue Background and Drop Shadow*/
+.game-main {
+    position:relative;
+    padding: 2%;
+    width:fit-content;
+    height:fit-content;
+    background-color: var(--color-dark-shade);
+    border-radius:5%;
+}
+
+/*Embedded Game*/
+iframe{
+    display: block;
+    box-sizing: content-box;
+    height: 600px;
+    width: 500px;
+    max-width:700px;
+    border-radius:3.5%;
+}
+
+/*Width and Height of Snake Game*/
+.snake {
+    width:450px;
+    height:504px;
+}
+
+/*Start Game*/
+
+/*Start Game Layer*/
+.game-layer {
+    position:absolute;
+    
+    border-radius:5%;
+    height:100%;
+    width:104%;
+    z-index:10;
+
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    
+    background-color: var(--color-dark-shade);
+    color: var(--color-main-light);
+}
+
+/*Start Button on Start Game Layer*/
+.start-button {
+    display:block;
+    color:white;
+    text-align:center;
+    padding:3% 8%;
+    border: 3px solid white;
+    background-color: var(--color-semi-transparent);
+}
+
+/*Game Instructions on Start Game Layer*/
+
+/*"Instructions" Title*/
+.game-layer em{
+    font-size: 20px;
+    font-weight:bolder;
+}
+
+/*Instructions Steps*/
+.game-layer p{
+    font-weight: thin;
+    padding: 0 10%;
+    text-align: center;
+}
+
+/*Footer*/
+
+/*General Footer Styles*/
+footer {
+    box-sizing: border-box;
+    width:100%;
+    padding: 1rem;
+
+    font-size:15px;
+
+    color: var(--color-main-light);
+    background-color: var(--color-main-dark);
+
+    display:flex;
+    justify-content:space-between;
+
+    position:relative;
+}
+
+/*Sign In and Sign Up Page Footers are at the Bottom of the Window*/
+.footer-fixed {
+    position:fixed;
+    bottom:0;
+}
+
+/*Adjusting Styles by Page Width*/
+
+/*Adjusting Article Width On Screens Under 500px Width*/
+@media only screen and (max-width: 500px){
+    .artimage, article {
+        width:80vw;
+    }
+}
+
+/*Adjusting Styles of Items On Screens Under 800px Width*/
+@media only screen and (max-width: 800px){
+    /*Title Shifts to Prevent Overlap with Background Image Choice List*/
+    #title {
+        flex-basis:calc(100% - 95px);
+    }
+
+    /*Carousel Title Become Full Width*/
+    h4 {
+        margin-left:0;
+        margin-right:0;
+        border-left:none;
+        border-right:none;
+    }
+
+    /*Form Width*/
+    .form-sign, .form-mood {
+        width:70%;
+    }
+
+    /*Inspirational Quote Font Size*/
+    aside {
+        font-size: 5vw;
+    }
+
+    /*Article Content Width*/
+    .artimage, article {
+        width:70vw;
+    }
+}
+/*Adjusting Layout of Items On Screens Under 1200px Width*/
+@media only screen and (max-width: 1200px){
+    /*Container for Forms and Buttons*/
+    #moodtracker{
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap-reverse;
+    }
+}

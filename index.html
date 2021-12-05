@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="/WS22_1/css/main.css">
+    <title>Brealief</title>
+</head>
+
+<body>
+    <!--Header-->
+    <header class="z-depth-2">
+        <!--Brealief Logo-->
+        <a class="logo" href="index.html">
+            <img src="/WS22_1/img/BrealiefLogo3.png" alt="Brealief Logo" />
+        </a>
+
+        <!--Section of Header with Navigation Links-->
+        <nav class="nav-links">
+            <!--Dropdown for Navigation Between Pages-->
+            <h5 class="title-links link">Links&nbsp;<span class="arrow-ud">&#11167;</span></h5>
+            <div class="dropdown">
+                <!--Primary Dropdown with Links to Mental Health and Therapy Game Carousels-->
+                <nav class="link primary">
+                    <span class="link title-ment">
+                        <a href="#mental-health">Mental Health Resources <span class="arrow-lr-1">&#11166;</span></a>
+                    </span>
+                    <span class="link title-ther">
+                        <a href="#therapy-games">Therapy Games <span class="arrow-lr-2">&#11166;</span></a>
+                    </span>
+                </nav>
+
+                <!--Secondary Dropdowns with Links to Individual Pages-->
+                <nav class="link secondary">
+                    <!--Dropdown with Links to Mental Health Resource Pages-->
+                    <nav class="link ment z-depth-3">
+                        <span class="link mood-tracker"><a href="moodtracker.html">Mood Tracker</a></span>
+                        <span class="link resources"><a href="healthresources.html">Resources</a></span>
+                        <span class="link importance"><a href="mentalhealthimportance.html">Importance</a>
+                        </span>
+                        <span class="link effects"><a href="effectsofmentalhealth.html">Effects</a>
+                        </span>
+                    </nav>
+
+                    <!--Dropdown with Links to Therapy Game Pages-->
+                    <nav class="link ther z-depth-3">
+                        <div class="link matching"><a href="matching.html">Matching</a></div>
+                        <span class="link food-snake"><a href="snake.html">Food Snake</a></span>
+                        <span class="link twenforate"><a href="twenforate.html">2048</a></span>
+                    </nav>
+                </nav>
+            </div>
+
+            <!--Links to Sign In and Sign Up Pages-->
+            <h5 class="link sign-in"><a href="signin.html">Sign In</a></h5>
+            <h5 class="link sign-up"><a href="signup.html">Sign Up</a></h5>
+        </nav>
+
+        <!--Embedded Audio-->
+        <audio class="soundscape" controls autoplay hidden>
+            <source src="/WS22_1/mp3/soundscape1.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </header>
+
+    <!--Background Image and Layer Over Image-->
+    <div class="bg-img bg-img-main"></div>
+    <div class="layer"></div>
+
+    <!--Brealief Title with Background Image Choices-->
+    <section id="title-div">
+
+        <!--Title-->
+        <div id="title">
+            <img src="/WS22_1/img/Brealief_Logo5.png" alt="Brealief Logo" />
+        </div>
+
+        <!--Choices for Page Background-->
+        <section id="bg-choices">
+            <img class="bg-choice z-depth-3" id="choice-1" src="/WS22_1/img/nature-img-1.jpg">
+            <img class="bg-choice z-depth-3" id="choice-2" src="/WS22_1/img/nature-img-2.jpg">
+            <img class="bg-choice z-depth-3" id="choice-3" src="/WS22_1/img/nature-img-3.jpg">
+            <img class="bg-choice z-depth-3" id="choice-4" src="/WS22_1/img/nature-img-4.jpg">
+            <img class="bg-choice z-depth-3" id="choice-5" src="/WS22_1/img/nature-img-5.jpg">
+            <img class="bg-choice z-depth-3" id="choice-6" src="/WS22_1/img/nature-img-6.jpg">
+        </section>
+
+        <!--Instructions for/Description of Image Selection, Listing What Will Change Based on Selection-->
+        <div id="bg-choice-instructions">
+            <p>Click on an image to change the background image, audio, and inspirational quote!</p>
+        </div>
+    </section>
+
+    <!--Main Site Content-->
+    <main class="main-content">
+
+        <!--Mental Health Resources Carousel-->
+        <section class="index-main">
+            <!--Carousel Anchor for Link in Nav Bar Dropdown (Adjusment for Fixed Header)-->
+            <div id="mental-health"></div>
+
+            <!--Carousel Title-->
+            <h4>Mental Health Resources</h4>
+
+            <!--Carousel Left and Right Buttons-->
+            <div class="carousel-btns">
+                <p class="btn" id="left-1">&#10094;</p>
+                <p class="btn" id="right-1">&#10095;</p>
+            </div>
+
+            <!--Carousel with Items (Linked to Other Site Pages)-->
+            <section class="carousel mental-health">
+                <!--Mood Tracker Carousel Item Linked to moodtracker.html-->
+                <div class="carousel-item">
+                    <a href="moodtracker.html"><img src="/WS22_1/img/Moodtracker.png" /></a>
+                </div>
+
+                <!--Mental Health Resources Carousel Item Linked to healthresources.html-->
+                <div class="carousel-item">
+                    <a href="healthresources.html"><img src="/WS22_1/img/menthealthresources.png" /></a>
+                </div>
+
+                <!--Importance of Mental Health Carousel Item Linked to mentalhealthimportance.html-->
+                <div class="carousel-item">
+                    <a href="mentalhealthimportance.html"><img src="/WS22_1/img/mentimportlogo.png" /></a>
+                </div>
+
+                <!--Effects of Mental Health Carousel Item Linked to effmenthealth.html-->
+                <div class="carousel-item">
+                    <a href="effectsofmentalhealth.html"><img src="/WS22_1/img/effmenthealth.png" /></a>
+                </div>
+            </section>
+        </section>
+
+        <!--Inspirational Quote Between Carousels-->
+        <aside>
+            “Happiness can be found even in the darkest of times, if one only remembers
+            to turn on the light.” — Albus Dumbledore
+        </aside>
+
+        <!--Therapy Games Carousel-->
+        <section class="index-main">
+            <!--Carousel Title Used as Anchor for Link in Nav Bar Dropdown-->
+            <h4 id="therapy-games">Therapy Games</h4>
+
+            <!--Carousel Left and Right Buttons-->
+            <div class="carousel-btns">
+                <p class="btn" id="left-2">&#10094;</p>
+                <p class="btn" id="right-2">&#10095;</p>
+            </div>
+
+            <!--Carousel with Items-->
+            <section class="carousel therapy-games">
+                <!--Matching Game Carousel Item Linked to matching.html-->
+                <div class="carousel-item">
+                    <a href="matching.html"><img src="/WS22_1/img/matching.PNG" /></a>
+                </div>
+
+                <!--Food Snake Game Carousel Item Linked to snake.html-->
+                <div class="carousel-item">
+                    <a href="snake.html"><img src="/WS22_1/img/food-snake.PNG" /></a>
+                </div>
+
+                <!--2048 Carousel Item Linked to twenforate.html-->
+                <div class="carousel-item">
+                    <a href="twenforate.html"><img src="/WS22_1/img/2048.PNG" /></a>
+                </div>
+            </section>
+        </section>
+
+        <!--Footer-->
+        <footer>
+            <p>&#169; Brealief 2021</p>
+            <p>Spencer Lyudovyk, Andrew Wang, William Liu</p>
+        </footer>
+    </main>
+
+    <!--Javascript Links-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/WS22_1/js/main.js"></script>
+</body>
+
+</html>

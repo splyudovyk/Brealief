@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Game</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="/WS22_1/css/main.css">
+</head>
+
+<body>
+    <!--Header-->
+    <header class="z-depth-2">
+        <!--Brealief Logo-->
+        <a class="logo" href="index.html">
+            <img src="/WS22_1/img/BrealiefLogo3.png" alt="Brealief Logo" />
+        </a>
+
+        <!--Section of Header with Navigation Links-->
+        <nav class="nav-links">
+            <!--Dropdown for Navigation Between Pages-->
+            <h5 class="title-links link">Links&nbsp;<span class="arrow-ud">&#11167;</span></h5>
+            <div class="dropdown">
+                <!--Primary Dropdown with Links to Mental Health and Therapy Game Carousels-->
+                <nav class="link primary">
+                    <div class="link title-ment">
+                        <a href="index.html#mental-health">Mental Health Resources <span
+                                class="arrow-lr-1">&#11166;</span></a>
+                    </div>
+                    <div class="link title-ther">
+                        <a href="index.html#therapy-games">Therapy Games <span class="arrow-lr-2">&#11166;</span></a>
+                    </div>
+                </nav>
+
+                <!--Secondary Dropdowns with Links to Individual Pages-->
+                <nav class="link secondary">
+                    <!--Dropdown with Links to Mental Health Resource Pages-->
+                    <nav class="link ment z-depth-3">
+                        <div class="link mood-tracker"><a href="moodtracker.html">Mood Tracker</a></div>
+                        <div class="link resources"><a href="healthresources.html">Resources</a></div>
+                        <div class="link importance"><a href="mentalhealthimportance.html">Importance</a>
+                        </div>
+                        <div class="link effects"><a href="effectsofmentalhealth.html">Effects</a>
+                        </div>
+                    </nav>
+
+                    <!--Dropdown with Links to Therapy Game Pages-->
+                    <nav class="link ther z-depth-3">
+                        <div class="link matching"><a href="matching.html">Matching</a></div>
+                        <div class="link food-snake"><a href="snake.html">Food Snake</a></div>
+                        <div class="link twenforate"><a href="twenforate.html">2048</a></div>
+                    </nav>
+                </nav>
+            </div>
+
+            <!--Links to Sign In and Sign Up Pages-->
+            <h5 class="link sign-in"><a href="signin.html">Sign In</a></h5>
+            <h5 class="link sign-up"><a href="signup.html">Sign Up</a></h5>
+
+            <!--Link to Return To Previous Page-->
+            <h5 class="link return"><a class="return-link">Return Back</a></h5>
+        </nav>
+
+        <!--Embedded Audio-->
+        <audio class="soundscape" controls autoplay hidden>
+            <source src="/WS22_1/mp3/soundscape1.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </header>
+
+    <!--Game Title and Catchphrase-->
+    <section class="page-title z-depth-2">
+        <h2>Matching</h2>
+        <em>Comforting Memory Game</em>
+    </section>
+
+    <!--Game Container-->
+    <div class="game-container">
+        <!--Start Game Layer-->
+        <div class="game-layer">
+            <!--Start Button-->
+            <h3 class="start-button">Start</h3>
+
+            <!--Game Instructions-->
+            <em>Instructions:</em>
+            <p>1) Click "Start" to play.</p>
+            <p>2) Click on boxes to reveal them. Reveal two same boxes in a row to match them.</p>
+            <p>3) Try to match all the boxes in the least amount of time!</p>
+        </div>
+
+        <!--Embedded Game-->
+        <main class="game-main z-depth-3">
+            <iframe src="https://h5p.org/h5p/embed/439431" allowfullscreen="allowfullscreen"
+                title="Example content memory game audio"></iframe>
+        </main>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <p>&#169; Brealief 2021</p>
+        <p>Spencer Lyudovyk, Andrew Wang, William Liu</p>
+    </footer>
+
+    <!--Javascript Links-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/WS22_1/js/main.js"></script>
+</body>
+
+</html>
