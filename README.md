@@ -25,7 +25,7 @@ It is available at the following URL:
 It has been tested on Google Chrome and Microsoft Edge.
 
 ## Contributors
-This was a collaboration of a group of high school students.
+This was a collaboration of a group of high school students. We worked together to brainstorm and develop the website, create the content, and test all parts. 
 
 My contributions included:
 - Color palette selection
