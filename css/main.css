@@ -52,14 +52,14 @@ a {
 
 /*Home Page Background Image*/
 .bg-img-main {
-    --bg-img: url('/img/nature-img-1.jpg');
+    --bg-img: url('img/nature-img-1.jpg');
     background-image: var(--bg-img);
     transition-duration: 0.3s;
 }
 
 /*Sign Up, Your Profile, and Change Password Pages Background Image*/
 .bg-img-sign {
-    --bg-img: url('/img/bg-img-sign.jpg');
+    --bg-img: url('img/bg-img-sign.jpg');
     background-image: var(--bg-img);
 }
 
