@@ -11,7 +11,7 @@ It includes features such as the following:
 - Nature soundscapes, scenic images, inspirational quotes
 - Therapeutic games
 - Information about mental health resources
-- Sign-in and sign-up pages that allow a user to log in or create an account (account storage is implemented using a Firebase database)
+- Sign-in and sign-up pages that allow a user to log in or create an account (account functionality is implemented using a Firebase database)
 - Mood tracker that allows a user to store and view their mood trends using their account
 
 ## Languages
@@ -21,8 +21,7 @@ It includes features such as the following:
 
 ## How to Run
 This can be run by either downloading the project and running it with the VSCode LiveServer extension or by hosting it on GitHub.
-It is available at the following URL:
-It has been tested on Google Chrome and Microsoft Edge.
+It has been tested on Google Chrome and Microsoft Edge and is available at the following URL: https://splyudovyk.github.io/Brealief/.
 
 ## Contributors
 This was a collaboration of a group of high school students. We worked together to brainstorm and develop the website, create the content, and test all parts. 
