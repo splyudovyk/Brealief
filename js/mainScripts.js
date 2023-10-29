@@ -3,12 +3,12 @@ $(document).ready(function () {
     /*Change Image Background of Title on Home Page Using Image Choices*/
 
     /*All images in choice list can be clicked on to change background*/
-    changeBgImg('#choice-1', "url(./img/nature-img-1.jpg)", "rgba(27, 46, 129, 0.644)");
-    changeBgImg('#choice-2', "url(./img/nature-img-2.jpg)", "rgba(20, 20, 100, 0.644)");
-    changeBgImg('#choice-3', "url(./img/nature-img-3.jpg)", "rgba(50, 18, 100, 0.644)");
-    changeBgImg('#choice-4', "url(./img/nature-img-4.jpg)", "rgba(42, 20, 70, 0.644)");
-    changeBgImg('#choice-5', "url(./img/nature-img-5.jpg)", "rgba(20, 60, 100, 0.644)");
-    changeBgImg('#choice-6', "url(./img/nature-img-6.jpg)", "rgba(10, 55, 70, 0.644)");
+    changeBgImg('#choice-1', "url(/img/nature-img-1.jpg)", "rgba(27, 46, 129, 0.644)");
+    changeBgImg('#choice-2', "url(/img/nature-img-2.jpg)", "rgba(20, 20, 100, 0.644)");
+    changeBgImg('#choice-3', "url(/img/nature-img-3.jpg)", "rgba(50, 18, 100, 0.644)");
+    changeBgImg('#choice-4', "url(/img/nature-img-4.jpg)", "rgba(42, 20, 70, 0.644)");
+    changeBgImg('#choice-5', "url(/img/nature-img-5.jpg)", "rgba(20, 60, 100, 0.644)");
+    changeBgImg('#choice-6', "url(/img/nature-img-6.jpg)", "rgba(10, 55, 70, 0.644)");
 
     /*Function for changing background image and image choice styles*/
     function changeBgImg(choice, imgurl, layercolor) {
