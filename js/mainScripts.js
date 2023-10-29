@@ -3,12 +3,12 @@ $(document).ready(function () {
     /*Change Image Background of Title on Home Page Using Image Choices*/
 
     /*All images in choice list can be clicked on to change background*/
-    changeBgImg('#choice-1', "url(/img/nature-img-1.jpg)", "rgba(27, 46, 129, 0.644)");
-    changeBgImg('#choice-2', "url(/img/nature-img-2.jpg)", "rgba(20, 20, 100, 0.644)");
-    changeBgImg('#choice-3', "url(/img/nature-img-3.jpg)", "rgba(50, 18, 100, 0.644)");
-    changeBgImg('#choice-4', "url(/img/nature-img-4.jpg)", "rgba(42, 20, 70, 0.644)");
-    changeBgImg('#choice-5', "url(/img/nature-img-5.jpg)", "rgba(20, 60, 100, 0.644)");
-    changeBgImg('#choice-6', "url(/img/nature-img-6.jpg)", "rgba(10, 55, 70, 0.644)");
+    changeBgImg('#choice-1', "url(./img/nature-img-1.jpg)", "rgba(27, 46, 129, 0.644)");
+    changeBgImg('#choice-2', "url(./img/nature-img-2.jpg)", "rgba(20, 20, 100, 0.644)");
+    changeBgImg('#choice-3', "url(./img/nature-img-3.jpg)", "rgba(50, 18, 100, 0.644)");
+    changeBgImg('#choice-4', "url(./img/nature-img-4.jpg)", "rgba(42, 20, 70, 0.644)");
+    changeBgImg('#choice-5', "url(./img/nature-img-5.jpg)", "rgba(20, 60, 100, 0.644)");
+    changeBgImg('#choice-6', "url(./img/nature-img-6.jpg)", "rgba(10, 55, 70, 0.644)");
 
     /*Function for changing background image and image choice styles*/
     function changeBgImg(choice, imgurl, layercolor) {
@@ -36,12 +36,12 @@ $(document).ready(function () {
     /*Change Audio and Inspirational Quote on Home Page Using Image Choices*/
 
     /*Each image choice has a different audio and quote*/
-    changeAudQuo('#choice-1', "/mp3/soundscape1.mp3", "“Happiness can be found even in the darkest of times, if one only remembers to turn on the light.” — Albus Dumbledore");
-    changeAudQuo('#choice-2', "/mp3/soundscapemountain.mp3", "“Take your time healing, as long as you want. Nobody else knows what you’ve been through. How could they know how long it will take to heal you?” — Abertoli");
-    changeAudQuo('#choice-3', "/mp3/soundscapeforest-med.mp3", "“You can’t control everything.Sometimes you just need to relax and have faith that things will work out.Let go a little and just let life happen.” — Kody Keplinger");
-    changeAudQuo('#choice-4', "/mp3/soundscapebeach.mp3", "“You, yourself, as much as anybody in the entire universe, deserve your love and affection.” — Buddha");
-    changeAudQuo('#choice-5', "/mp3/soundscapelake.mp3", "“Let your story go. Allow yourself to be present with who you are right now.” – Russ Kyle");
-    changeAudQuo('#choice-6', "/mp3/soundscapewaterfall2.mp3", "“One small crack does not mean that you are broken, it means that you were put to the test and you didn’t fall apart.” — Linda Poindexter");
+    changeAudQuo('#choice-1', "./mp3/soundscape1.mp3", "“Happiness can be found even in the darkest of times, if one only remembers to turn on the light.” — Albus Dumbledore");
+    changeAudQuo('#choice-2', "./mp3/soundscapemountain.mp3", "“Take your time healing, as long as you want. Nobody else knows what you’ve been through. How could they know how long it will take to heal you?” — Abertoli");
+    changeAudQuo('#choice-3', "./mp3/soundscapeforest-med.mp3", "“You can’t control everything.Sometimes you just need to relax and have faith that things will work out.Let go a little and just let life happen.” — Kody Keplinger");
+    changeAudQuo('#choice-4', "./mp3/soundscapebeach.mp3", "“You, yourself, as much as anybody in the entire universe, deserve your love and affection.” — Buddha");
+    changeAudQuo('#choice-5', "./mp3/soundscapelake.mp3", "“Let your story go. Allow yourself to be present with who you are right now.” – Russ Kyle");
+    changeAudQuo('#choice-6', "./mp3/soundscapewaterfall2.mp3", "“One small crack does not mean that you are broken, it means that you were put to the test and you didn’t fall apart.” — Linda Poindexter");
 
     /*Function for changing audio and quote*/
     function changeAudQuo(choice, mp3, quote) {
