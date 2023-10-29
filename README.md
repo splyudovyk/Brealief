@@ -11,8 +11,8 @@ It includes features such as the following:
 - Nature soundscapes, scenic images, inspirational quotes
 - Therapeutic games
 - Information about mental health resources
-- Sign-in and sign-up pages that allow a user to log in or create an account
-- Mood tracker that allows a user to track mood over time
+- Sign-in and sign-up pages that allow a user to log in or create an account (account storage is implemented using a Firebase database)
+- Mood tracker that allows a user to store and view their mood trends using their account
 
 ## Languages
 - HTML
