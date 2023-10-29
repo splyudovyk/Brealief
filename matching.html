@@ -8,7 +8,7 @@
     <title>Matching Game</title>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="/WS22_1/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <header class="z-depth-2">
         <!--Brealief Logo-->
         <a class="logo" href="index.html">
-            <img src="/WS22_1/img/BrealiefLogo3.png" alt="Brealief Logo" />
+            <img src="/img/BrealiefLogo3.png" alt="Brealief Logo" />
         </a>
 
         <!--Section of Header with Navigation Links-->
@@ -56,17 +56,29 @@
                 </nav>
             </div>
 
-            <!--Links to Sign In and Sign Up Pages-->
-            <h5 class="link sign-in"><a href="signin.html">Sign In</a></h5>
+            <!--Dropdown for Links Pertaining to User Account-->
+            <div class="dropdown">
+                <!--Dropdown Title-->
+                <h5 class="link your-acc">Your Account&nbsp;<span class="arrow-ud-2">&#11167;</span></h5>
+            
+                <!--Dropdown with Links to Your Profile, Change Password, and Mood Tracker Pages-->
+                <nav class="link your-acc-links">
+                    <span class="link your-prof"><a href="yourprofile.html">Your Profile</a></span>
+                    <span class="link change-pass"><a href="changepass.html">Change Password</a></span>
+                    <span class="link mood-track"><a href="moodtracker.html">Mood Tracker</a></span>
+                </nav>
+            </div>
+            
+            <!--Link to Sign Up Page-->
             <h5 class="link sign-up"><a href="signup.html">Sign Up</a></h5>
-
+            
             <!--Link to Return To Previous Page-->
             <h5 class="link return"><a class="return-link">Return Back</a></h5>
         </nav>
 
         <!--Embedded Audio-->
         <audio class="soundscape" controls autoplay hidden>
-            <source src="/WS22_1/mp3/soundscape1.mp3" type="audio/mp3">
+            <source src="/mp3/soundscape1.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </header>
@@ -107,7 +119,7 @@
     <!--Javascript Links-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/WS22_1/js/main.js"></script>
+    <script type="text/javascript" src="/js/mainScripts.js"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/WS22_1/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Mood Tracker</title>
 </head>
 
@@ -15,7 +15,7 @@
     <header class="z-depth-2">
         <!--Brealief Logo-->
         <a class="logo" href="index.html">
-            <img src="/WS22_1/img/BrealiefLogo3.png" alt="Brealief Logo" />
+            <img src="/img/BrealiefLogo3.png" alt="Brealief Logo" />
         </a>
 
         <!--Section of Header with Navigation Links-->
@@ -57,17 +57,29 @@
                 </nav>
             </div>
 
-            <!--Links to Sign In and Sign Up Pages-->
-            <h5 class="link sign-in"><a href="signin.html">Sign In</a></h5>
+            <!--Dropdown for Links Pertaining to User Account-->
+            <div class="dropdown">
+                <!--Dropdown Title-->
+                <h5 class="link your-acc">Your Account&nbsp;<span class="arrow-ud-2">&#11167;</span></h5>
+            
+                <!--Dropdown with Links to Your Profile, Change Password, and Mood Tracker Pages-->
+                <nav class="link your-acc-links">
+                    <span class="link your-prof"><a href="yourprofile.html">Your Profile</a></span>
+                    <span class="link change-pass"><a href="changepass.html">Change Password</a></span>
+                    <span class="link mood-track"><a href="moodtracker.html">Mood Tracker</a></span>
+                </nav>
+            </div>
+            
+            <!--Link to Sign Up Page-->
             <h5 class="link sign-up"><a href="signup.html">Sign Up</a></h5>
-
+            
             <!--Link to Return To Previous Page-->
             <h5 class="link return"><a class="return-link">Return Back</a></h5>
         </nav>
 
         <!--Embedded Audio-->
         <audio class="soundscape" controls autoplay hidden>
-            <source src="/WS22_1/mp3/soundscape1.mp3" type="audio/mp3">
+            <source src="/mp3/soundscape1.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </header>
@@ -83,18 +95,14 @@
         <!--Form Container-->
         <section id="moodtracker">
             <!--Form for Inputing Mood-->
-            <form id="moodform" action="moodtrackerdata.html" method="get">
+            <section id="moodform">
                 <!--Displays Selected Input Based on Image Choice-->
                 <label for="mood">How are you feeling?</label>
                 <br>
                 <input id="mood" type="text" readonly required>
-                <label for="Pleasantness" hidden></label>
-                <input id="Pleasantness" type="number" min="-1" max="1" hidden required>
-                <label for="Energy" hidden></label>
-                <input id="Energy" type="number" min="-1" max="1" hidden required>
                 <br>
-                <br>
-                <br>
+                <br class="moodbreak">
+                <br class="moodbreak">
 
                 <!--Displays Mood Meaning of Image Choice Selected on Hover-->
                 <p>Select a button that matches your mood:</p>
@@ -102,50 +110,93 @@
                     <p>___________________</p>
                 </div>
                 <br>
-
-                <!--Submit Button-->
-                <input class="submit" type="submit" value="Enter">
-            </form>
+            </section>
 
             <!--Img Buttons for Selecting Mood-->
             <section class="buttons">
                 <div class="row">
                     <div class="element">
-                        <img id="Energetic-Negative" src="/WS22_1/img/Thunderstorm.jpg" />
+                        <img id="Energetic-Negative" src="/img/Thunderstorm.jpg" />
                     </div>
                     <div class="element">
-                        <img id="Energetic-Neutral" src="/WS22_1/img/Ocean.jpg" />
+                        <img id="Energetic-Neutral" src="/img/Ocean.jpg" />
                     </div>
                     <div class="element">
-                        <img id="Energetic-Positive" src="/WS22_1/img/Waterfall.jfif" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="element">
-                        <img id="Neutral-Negative" src="/WS22_1/img/Rainy Lake.jpg" />
-                    </div>
-                    <div class="element">
-                        <img id="Neutral-Neutral" src="/WS22_1/img/Plain.jpg" />
-                    </div>
-                    <div class="element">
-                        <img id="Neutral-Positive" src="/WS22_1/img/Beautifulscape.jpeg" />
+                        <img id="Energetic-Positive" src="/img/Waterfall.jfif" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="element">
-                        <img id="Passive-Negative" src="/WS22_1/img/Darklandscape.jfif" />
+                        <img id="Neutral-Negative" src="/img/Rainy Lake.jpg" />
                     </div>
                     <div class="element">
-                        <img id="Passive-Neutral" src="/WS22_1/img/NightLake.jpg" />
+                        <img id="Neutral-Neutral" src="/img/Plain.jpg" />
                     </div>
                     <div class="element">
-                        <img id="Passive-Positive" src="/WS22_1/img/sunset.jpg" />
+                        <img id="Neutral-Positive" src="/img/Beautifulscape.jpeg" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="element">
+                        <img id="Passive-Negative" src="/img/Darklandscape.jfif" />
+                    </div>
+                    <div class="element">
+                        <img id="Passive-Neutral" src="/img/NightLake.jpg" />
+                    </div>
+                    <div class="element">
+                        <img id="Passive-Positive" src="/img/sunset.jpg" />
                     </div>
                 </div>
             </section>
             <br>
         </section>
+
+        <!--Account Data Input-->
+        <section id="account-input">
+            <!--Section Name-->
+            <h5>Please enter your account data:</h5>
+
+            <!--Username Input-->
+            <label for="usernameText">Username: </label>
+            <input id="usernameText" type="text" name="usernameText" class="validate" required>
+            <br>
+            
+            <!--Password Input-->
+            <label for="passwordText">Password: </label>
+            <input id="passwordText" type="password" name="passwordText" class="validate" required>
+            <br>
+        </section>
+
+        <!--Button Container-->
+        <section class="submitbuttons">
+            <!--Submit Button-->
+            <input class="leftbutton" id="submitmood" type="submit" value="Enter">
+
+            <!--Submit Button-->
+            <input class="rightbutton" id="submittrend" type="submit" value="View Mood Trend">
+        </section>
     </main>
+
+    <!--Mood Graph Container-->
+    <section class="moodcont">
+        <!--Mood Graph-->
+        <section id="moodresults">
+            <!--Graph Title-->
+            <h5 id="graphtitle"></h5>
+
+            <!--Graph-->
+            <section id="moodgraph">
+                <!--Graph Bars (Element to be Cloned)-->
+                <div id="mooditem" class="moodbar"></div>
+
+                <!--Graph Labels (Under Bars) (Element to be Cloned)-->
+                <p id="moodlabel" class="moodbarname">Angry</p>
+
+                <!--Displays Mood Value (Element to be Cloned)-->
+                <p id="moodhover" class="moodval"></p>
+            </section>
+        </section>
+    </section>
 
     <!--Footer-->
     <footer class="footer-fixed">
@@ -156,7 +207,8 @@
     <!--Javascript Links-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/WS22_1/js/main.js"></script>
+    <script type="text/javascript" src="/js/mainScripts.js"></script>
+    <script type="module" src="js/firebaseScripts.js"></script>
 </body>
 
 </html>

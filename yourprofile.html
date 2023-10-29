@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Edit Profile</title>
 </head>
 
 <body>
@@ -21,6 +20,7 @@
 
         <!--Section of Header with Navigation Links-->
         <nav class="nav-links">
+
             <!--Dropdown for Navigation Between Pages-->
             <h5 class="title-links link">Links&nbsp;<span class="arrow-ud">&#11167;</span></h5>
             <div class="dropdown">
@@ -83,35 +83,75 @@
         </audio>
     </header>
 
-    <!--Game Title and Catchphrase-->
-    <section class="page-title z-depth-2">
-        <h2>Snake</h2>
-        <em>The Satisfaction of Consuming Blocks</em>
-    </section>
+    <!--Background Image-->
+    <div class="bg-img bg-img-sign"></div>
 
-    <!--Game Container-->
-    <div class="game-container">
-        <!--Start Game Layer-->
-        <div class="game-layer">
-            <!--Start Button-->
-            <h3 class="start-button">Start</h3>
+    <!--Form for Sign Up with Username and Password-->
+    <main class="form-sign">
+        <!--Form Title-->
+        <h1>Your Profile</h1>
 
-            <!--Game Instructions-->
-            <em>Instructions:</em>
-            <p>1) Click "Start" to play.</p>
-            <p>2) Use the arrow keys on your keyboard to move the snake around.</p>
-            <p>3) Eat as many single block pieces as you can!</p>
+        <!--Initial Form to Select Account-->
+        <div class = "account-layer">
+            <!--Username Input-->
+            <label for="usernameedit">Username: </label>
+            <input id = "usernameedit" type = "text" name = "username" class = "validate" required>
+            
+            <!--Password Input-->
+            <label for="passwordedit">Current Password: </label>
+            <input id = "passwordedit" type = "password" name = "password" class = "validate" required>
+            <br>
+            
+            <!--Select Button-->
+            <input class = "select-button" type="submit" value = "Select Account">
+        </div>    
+
+        <!--Form for Viewing and Changing Account Data (Initially Hidden)-->
+        <div class = "z depth-3" id = "editprof" hidden>
+            <!--Username Input-->
+            <label for="newusername">Username (Can't Change): </label>
+            <input id = "newusername" type = "text" name = "username" class = "validate" required readonly>
+            
+            <!--Name Input-->
+            <label for="nameedit">Name: </label>
+            <input id = "nameedit" type = "text" name = "name" class = "validate" required>
+            
+            <!--Age Input-->
+            <label for="ageNumberedit" value = >Age: </label>
+            <input id="ageNumberedit" type="number" name="age" min="13" max="99" class="validate" required>
+            <br>
+            
+            <!--Mood Graph-->
+            <section id="moodresults">
+                <!--Mood Graph Title-->
+                <h5 id="graphtitle">Your Moods</h5>
+
+                <!--Graph-->
+                <section id="moodgraph">
+                    <!--Graph Bars (Element to be Cloned)-->
+                    <div id="mooditem" class="moodbar"></div>
+                    
+                    <!--Graph Labels (Under Bars) (Element to be Cloned)-->
+                    <p id="moodlabel" class="moodbarname">Angry</p>
+                    
+                    <!--Displays Mood Value (Element to be Cloned)-->
+                    <p id="moodhover" class="moodval"></p>
+                </section>
+            </section>
+
+            <!--Button Container-->
+            <section class="submitbuttons">
+                <!--Submit Button-->
+                <input class="leftbutton" id="change-button" type="submit" value="Update Data">
+
+                <!--Delete Account Button-->
+                <input class="rightbutton" id="deleteacc" type="submit" value="Delete Account">
+            </section>
         </div>
-
-        <!--Embedded Game-->
-        <main class="game-main z-depth-3">
-            <iframe class="snake" src="//jsfiddle.net/codeandcircuit/6uoyvfs3/embedded/result/dark/"
-                allowfullscreen="allowfullscreen" autoplay="false" frameborder="0"></iframe>
-        </main>
-    </div>
+    </main>
 
     <!--Footer-->
-    <footer>
+    <footer class="footer-fixed">
         <p>&#169; Brealief 2021</p>
         <p>Spencer Lyudovyk, Andrew Wang, William Liu</p>
     </footer>
@@ -120,6 +160,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="/js/mainScripts.js"></script>
+    <script type="module" src="/js/firebaseScripts.js"></script>
 </body>
 
 </html>

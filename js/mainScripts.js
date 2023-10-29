@@ -3,12 +3,12 @@ $(document).ready(function () {
     /*Change Image Background of Title on Home Page Using Image Choices*/
 
     /*All images in choice list can be clicked on to change background*/
-    changeBgImg('#choice-1', "url(/WS22_1/img/nature-img-1.jpg)", "rgba(27, 46, 129, 0.644)");
-    changeBgImg('#choice-2', "url(/WS22_1/img/nature-img-2.jpg)", "rgba(20, 20, 100, 0.644)");
-    changeBgImg('#choice-3', "url(/WS22_1/img/nature-img-3.jpg)", "rgba(50, 18, 100, 0.644)");
-    changeBgImg('#choice-4', "url(/WS22_1/img/nature-img-4.jpg)", "rgba(42, 20, 70, 0.644)");
-    changeBgImg('#choice-5', "url(/WS22_1/img/nature-img-5.jpg)", "rgba(20, 60, 100, 0.644)");
-    changeBgImg('#choice-6', "url(/WS22_1/img/nature-img-6.jpg)", "rgba(10, 55, 70, 0.644)");
+    changeBgImg('#choice-1', "url(/img/nature-img-1.jpg)", "rgba(27, 46, 129, 0.644)");
+    changeBgImg('#choice-2', "url(/img/nature-img-2.jpg)", "rgba(20, 20, 100, 0.644)");
+    changeBgImg('#choice-3', "url(/img/nature-img-3.jpg)", "rgba(50, 18, 100, 0.644)");
+    changeBgImg('#choice-4', "url(/img/nature-img-4.jpg)", "rgba(42, 20, 70, 0.644)");
+    changeBgImg('#choice-5', "url(/img/nature-img-5.jpg)", "rgba(20, 60, 100, 0.644)");
+    changeBgImg('#choice-6', "url(/img/nature-img-6.jpg)", "rgba(10, 55, 70, 0.644)");
 
     /*Function for changing background image and image choice styles*/
     function changeBgImg(choice, imgurl, layercolor) {
@@ -36,12 +36,12 @@ $(document).ready(function () {
     /*Change Audio and Inspirational Quote on Home Page Using Image Choices*/
 
     /*Each image choice has a different audio and quote*/
-    changeAudQuo('#choice-1', "/WS22_1/mp3/soundscape1.mp3", "“Happiness can be found even in the darkest of times, if one only remembers to turn on the light.” — Albus Dumbledore");
-    changeAudQuo('#choice-2', "/WS22_1/mp3/soundscapemountain.mp3", "“Take your time healing, as long as you want. Nobody else knows what you’ve been through. How could they know how long it will take to heal you?” — Abertoli");
-    changeAudQuo('#choice-3', "/WS22_1/mp3/soundscapeforest-med.mp3", "“You can’t control everything.Sometimes you just need to relax and have faith that things will work out.Let go a little and just let life happen.” — Kody Keplinger");
-    changeAudQuo('#choice-4', "/WS22_1/mp3/soundscapebeach.mp3", "“You, yourself, as much as anybody in the entire universe, deserve your love and affection.” — Buddha");
-    changeAudQuo('#choice-5', "/WS22_1/mp3/soundscapelake.mp3", "“Let your story go. Allow yourself to be present with who you are right now.” – Russ Kyle");
-    changeAudQuo('#choice-6', "/WS22_1/mp3/soundscapewaterfall2.mp3", "“One small crack does not mean that you are broken, it means that you were put to the test and you didn’t fall apart.” — Linda Poindexter");
+    changeAudQuo('#choice-1', "/mp3/soundscape1.mp3", "“Happiness can be found even in the darkest of times, if one only remembers to turn on the light.” — Albus Dumbledore");
+    changeAudQuo('#choice-2', "/mp3/soundscapemountain.mp3", "“Take your time healing, as long as you want. Nobody else knows what you’ve been through. How could they know how long it will take to heal you?” — Abertoli");
+    changeAudQuo('#choice-3', "/mp3/soundscapeforest-med.mp3", "“You can’t control everything.Sometimes you just need to relax and have faith that things will work out.Let go a little and just let life happen.” — Kody Keplinger");
+    changeAudQuo('#choice-4', "/mp3/soundscapebeach.mp3", "“You, yourself, as much as anybody in the entire universe, deserve your love and affection.” — Buddha");
+    changeAudQuo('#choice-5', "/mp3/soundscapelake.mp3", "“Let your story go. Allow yourself to be present with who you are right now.” – Russ Kyle");
+    changeAudQuo('#choice-6', "/mp3/soundscapewaterfall2.mp3", "“One small crack does not mean that you are broken, it means that you were put to the test and you didn’t fall apart.” — Linda Poindexter");
 
     /*Function for changing audio and quote*/
     function changeAudQuo(choice, mp3, quote) {
@@ -106,19 +106,12 @@ $(document).ready(function () {
     /*Nav Bar Buttons*/
 
     /*All nav bar buttons/elements change styles on hover*/
-    changeButtonOnHover('.sign-in');
-    changeButtonOnHover('.sign-up');
-    changeButtonOnHover('.return');
-    changeButtonOnHover('.title-links');
-    changeButtonOnHover('.title-ment');
-    changeButtonOnHover('.title-ther');
-    changeButtonOnHover('.twenforate');
-    changeButtonOnHover('.food-snake');
-    changeButtonOnHover('.matching');
-    changeButtonOnHover('.mood-tracker');
-    changeButtonOnHover('.resources');
-    changeButtonOnHover('.importance');
-    changeButtonOnHover('.effects');
+    buttons = ['sign-in', 'sign-up', 'your-acc', 'return', 'title-links', 'title-ment', 'title-ther',
+               'twenforate', 'food-snake', 'matching', 'mood-tracker', 'resources', 'importance',
+               'effects', 'mood-track', 'change-pass', 'your-prof']  //Array of button classes
+    for(let i = 0; i < buttons.length; i++){  //Iterates through array
+        changeButtonOnHover('.' + buttons[i]);
+    }
 
     /*Function for changing button appearance on hover*/
     function changeButtonOnHover(button) {
@@ -135,24 +128,26 @@ $(document).ready(function () {
 
     /*Nav Bar Dropdowns*/
 
-    /*Primary and secondary dropdowns initially hidden*/
-    $('.primary').hide();  //Primary dropdown
-    $('.secondary').hide();  //Secondary dropdown
+    /*Dropdowns initially hidden*/
+    $('.primary').hide();  //Primary links dropdown
+    $('.secondary').hide();  //Secondary links dropdown
+    $('.your-acc-links').hide();  //Your account dropdown
 
-    /*Primary dropdown is displayed if hovering over
-      "Links" title, primary dropdown, and secondary dropdowns*/
-    showGen('.title-links');
-    showGen('.primary');
-    showGen('.secondary');
-
-    /*Function for displaying primary dropdown*/
-    function showGen(element) {
+    /*Primary or account dropdown display when hovering over certain elements*/
+    showGen('.title-links', '.primary', '.arrow-ud');  //Primary dropdown displayed if hovering over "Links" title
+    showGen('.primary', '.primary', '.arrow-ud');  //Primary dropdown displayed if hovering over primary dropdown
+    showGen('.secondary', '.primary', '.arrow-ud');  //Primary dropdown displayed if hovering over secondary dropdown
+    showGen('.your-acc', '.your-acc-links', '.arrow-ud-2');  //Account dropdown displayed if hovering over "Your Account" title
+    showGen('.your-acc-links', '.your-acc-links', '.arrow-ud-2');  //Account dropdown displayed if hovering over account dropdown
+    
+    /*Function for displaying primary/account dropdown*/
+    function showGen(element, element2, arrow) {
         $(element).hover(() => {
-            $('.primary').show();  //Primary dropdown is displayed
-            $('.arrow-ud').html("&#11165;");  //Arrow in primary dropdown title is pointed up
+            $(element2).show();  //Primary dropdown is displayed
+            $(arrow).html("&#11165;");  //Arrow in primary dropdown title is pointed up
         }, () => {
-            $('.primary').hide();  //Primary dropdown is hidden
-            $('.arrow-ud').html("&#11167;");  //Arrow in primary dropdown title is pointed down
+            $(element2).hide();  //Primary dropdown is hidden
+            $(arrow).html("&#11167;");  //Arrow in primary dropdown title is pointed down
         });
     }
 
@@ -194,48 +189,21 @@ $(document).ready(function () {
         }
     });
 
-    /*Carousels*/
-
-    /*Initialize carousel with Materialize function*/
-    $('.carousel').carousel();
-
-    /*Carousel shifts automatically every 1000 milliseconds (10 seconds)*/
-    autoplay();
-    function autoplay() {
-        $('.carousel').carousel('next');
-        setTimeout(autoplay, 10000);
-    }
-
-    /*Carousel Buttons Shift Carousels Left and Right*/
-
-    /*All carousel buttons*/
-    carouselButton('#left-1', '.mental-health', 'prev');  //Mental health carousel left button
-    carouselButton('#right-1', '.mental-health', 'next');  //Mental health carousel right button
-    carouselButton('#left-2', '.therapy-games', 'prev');  //Therapy games carousel left button
-    carouselButton('#right-2', '.therapy-games', 'next');  //Therapy games carousel right button
-
-    /*Function for shifting carousel*/
-    function carouselButton(button, carousel, movement) {
-        $(button).on('click', () => {
-            $(carousel).carousel(movement);
-        });
-    }
-
     /*Input Mood on Mood Tracker using Image Choices*/
 
     /*Image choice assigned meanings*/
-    changeMood("#Energetic-Negative", "-1", "1", "Angry/Frustrated");
-    changeMood("#Energetic-Neutral", "0", "1", "Restless/Nervous");
-    changeMood("#Energetic-Positive", "1", "1", "Excited/Elated");
-    changeMood("#Neutral-Negative", "-1", "0", "Sad");
-    changeMood("#Neutral-Neutral", "0", "0", "Neutral/Bored");
-    changeMood("#Neutral-Positive", "1", "0", "Happy");
-    changeMood("#Passive-Negative", "-1", "-1", "Hopeless/Depressed");
-    changeMood("#Passive-Neutral", "0", "-1", "Tired");
-    changeMood("#Passive-Positive", "1", "-1", "Content/Relaxed");
+    changeMood("#Energetic-Negative", "Angry/Frustrated");
+    changeMood("#Energetic-Neutral", "Restless/Nervous");
+    changeMood("#Energetic-Positive", "Excited/Elated");
+    changeMood("#Neutral-Negative", "Sad");
+    changeMood("#Neutral-Neutral", "Neutral/Bored");
+    changeMood("#Neutral-Positive", "Happy");
+    changeMood("#Passive-Negative", "Hopeless/Depressed");
+    changeMood("#Passive-Neutral", "Tired");
+    changeMood("#Passive-Positive", "Content/Relaxed");
 
     /*Function for changing mood selection*/
-    function changeMood(choice, xcoord, ycoord, adj) {
+    function changeMood(choice, adj) {
         //Mood choice style changes on hover
         $(choice).hover(() => {
             $(choice).css("cursor", "pointer");  //Mouse cursor becomes pointer
@@ -253,26 +221,10 @@ $(document).ready(function () {
 
         //Change form data when clicked
         $(choice).on("click", () => {
-            var pleasantness = document.getElementById("Pleasantness"); //Set variable to input
-            var energy = document.getElementById("Energy");             //Set variable to input
-            pleasantness.value = xcoord; //Set input number value
-            energy.value = ycoord;      //Set input number value
             var mood = document.getElementById("mood");     //Set variable to input
             mood.value = adj;                               //Set input textvalue
         });
     }
-
-    /*Form Submit Button*/
-
-    /*Displays error when clicking on submit button (because data cannot be sent anywhere yet),
-      preventing the user from being taken to an error screen*/
-    /*This feature will be removed once the database is added*/
-    $('.submit').on('click', () => {
-        alert("This feature is not available yet.");  //Displays alert
-        $("form").submit(function (e) {
-            e.preventDefault();  //Prevents form from submitting so user is not shown an error page
-        });
-    });
 
     /*Start Button for Games*/
 
@@ -293,4 +245,5 @@ $(document).ready(function () {
         $('.start-button').css("background-color", 'rgba(180, 189, 231, 0.4)');
         $('.start-button').css("border-width", "3px");
     });
+    
 });

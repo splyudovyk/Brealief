@@ -1,5 +1,4 @@
 /*Resetting Styles, Setting Font Family, Declaring Color Variables*/
-
 * {
     all:revert;
     font-family: sans-serif;
@@ -16,7 +15,7 @@
 
 /*General Body Style and Background Image*/
 body {
-    --body-bg: url('/WS22_1/img/bg-img-sign.jpg');
+    --body-bg: url('/img/bg-img-sign.jpg');
     background-color: rgba(153, 204, 255, 0.4);
 }
 
@@ -37,7 +36,7 @@ a {
     position:fixed;
 }
 
-/*Pages Backgrounds*/
+/*Page Backgrounds*/
 
 /*Fixed Background Image*/
 .bg-img {
@@ -53,14 +52,14 @@ a {
 
 /*Home Page Background Image*/
 .bg-img-main {
-    --bg-img: url('/WS22_1/img/nature-img-1.jpg');
+    --bg-img: url('/img/nature-img-1.jpg');
     background-image: var(--bg-img);
     transition-duration: 0.3s;
 }
 
-/*Sign In and Sign Up Pages Background Image*/
+/*Sign Up, Your Profile, and Change Password Pages Background Image*/
 .bg-img-sign {
-    --bg-img: url('/WS22_1/img/bg-img-sign.jpg');
+    --bg-img: url('/img/bg-img-sign.jpg');
     background-image: var(--bg-img);
 }
 
@@ -173,7 +172,7 @@ nav {
 }
 
 /*Primary Dropdown*/
-.primary {
+.primary, .your-acc-links {
     display:inline-flex;
     flex-direction:column;
     position:absolute;
@@ -191,7 +190,7 @@ nav {
 /*Titles of Secondary Dropdowns in Primary Dropdown*/
 
 /*Secondary Dropdown Titles Take Up Full Width of Primary Dropdown*/
-.title-ment, .title-ther {
+.title-ment, .title-ther, .mood-track, .change-pass, .your-prof {
     box-sizing:border-box;
     width:100%;
     justify-content:flex-end;
@@ -239,7 +238,8 @@ nav {
 }
 
 /*Links in Dropdowns Take Up Dropdown's Full Width*/
-.mood-tracker, .resources, .importance, .effects,
+.mood-tracker, .mood-track, .change-pass, .your-prof,
+.resources, .importance, .effects,
 .matching, .food-snake, .twenforate {
     width: 100%;
     padding: 2px 6px;
@@ -472,20 +472,27 @@ form {
 
 /*Labels in Form*/
 form label{
+    font-size:30px;
     color: white;
 }
 
 /*Font Color of Text Entered by User*/
 input {
-    color:white;    
+    color:white;
+    display:block;
+}
+
+/*Your Profile Form Styles*/
+
+/*Enter Account Layer*/
+.account-layer{
+    height:60%;
+    width:92%;
+    z-index:10;    
+    color: var(--color-main-light);
 }
 
 /*Mood Tracker Form Styles*/
-
-/*Bottom Margin of Form*/
-.form-mood {
-    margin-bottom:100px;
-}
 
 /*Title Padding*/
 .form-mood h1 {
@@ -496,6 +503,7 @@ input {
 #moodtracker{
     display: flex;
     justify-content: left;
+    flex-wrap: none;
 }
 
 /*Paragraph Styles in Mood Tracker Form*/
@@ -503,14 +511,14 @@ input {
     font-size: 20px;
 }
 
-/*Font Size of Input for Moodtracker*/
+/*Font Size of Input for Mood Tracker*/
 #moodform input[type*="text"] {
     font-size: 22px; 
 }
 
 /*Displays Meaning of Selected Mood Tracker Image*/
 #select{
-    height: 0px; 
+    height: 32px; 
     font-size: 22px; 
 }
 
@@ -522,6 +530,7 @@ input {
     flex-wrap: wrap; 
     padding: 5px; 
     justify-content: center;
+    max-width:400px;
 }
 
 /*Container for Image Choices*/
@@ -548,32 +557,70 @@ input {
     margin: auto;
 }
 
-/*Paragraph Styles in Form*/
-#moodform p{
-    font-size: 20px;
-}
-/*Div Container Styles in Form*/
-#select{
-    height: 0px; 
-    font-size: 22px; 
+/*Mood Tracker Graph (Initially Hidden)*/
+
+/*Graph Container*/
+.moodcont {
+    display:none;
+    position:relative;
+    padding: 2.5%;
+    width:75%;
+    min-width:380px;
+    height:fit-content;
+    margin: 50px auto 100px;
+    background-color: var(--color-dark-shade);
 }
 
-/*Label for Form*/
-form label{
-    font-size: 30px; 
-    color: white;
+/*Graph with Title Container*/
+#moodresults{
+    background-color:whitesmoke;
+    box-sizing: border-box;
+    padding: 2% 4% 4%;
+    border-radius: 7px;
+    color:black;
+    text-align:center;
 }
 
-/*Container for Form and Buttons*/
-#moodtracker{
-    display: flex;
-    justify-content: left;
-    flex-wrap: none;
+/*Graph Title*/
+#graphtitle{
+    margin: 10px auto 20px;
 }
 
-/*Input for Moodtracker*/
-#moodform input[type*="text"] {
-    font-size: 22px; 
+/*Graph*/
+#moodgraph {
+    display:grid;
+    grid-template-columns: repeat(9, 10%);
+    grid-template-rows: 10fr 1fr;
+    column-gap: 1.25%;
+    height:300px;
+    width:100%;
+}
+
+/*First Graph Bar*/
+#mooditem {
+    background-color:red;
+}
+
+/*Graph Bars*/
+.moodbar {
+    align-self: end;
+}
+
+/*Graph Column Labels*/
+.moodbarname {
+    color:black;
+    justify-self:center;
+    height:fit-content;
+}
+
+/*Mood Bar Values (Default Hidden - Appear on Hover)*/
+.moodval {
+    background-color: var(--color-main-dark);
+    border-radius: 5px;
+    width:fit-content;
+    padding: 2px 5px;
+    color: var(--color-main-light);
+    visibility: hidden;
 }
 
 /*Submit Buttons on Forms*/
@@ -588,13 +635,24 @@ input[type*="submit"] {
     border:none;
     background-color:var(--color-main-light);
     transition: 0.3s;
-    width:200px;
+    width:170px;
 } 
 
 /*Submit Buttons Invert Color on Hover*/
 input[type*="submit"]:hover{
     background-color: var(--color-main-dark);
     color:white;
+}
+
+/*Button Container*/
+.submitbuttons{
+    display:flex;
+    justify-content: space-between;
+}
+
+/*Get Mood Trend/Graph Buttons*/
+#submittrend {
+    width:200px;
 }
 
 /*Article and Game Titles*/
@@ -777,7 +835,7 @@ footer {
     position:relative;
 }
 
-/*Sign In and Sign Up Page Footers are at the Bottom of the Window*/
+/*Form Page Footers are at the Bottom of the Window*/
 .footer-fixed {
     position:fixed;
     bottom:0;
@@ -785,10 +843,31 @@ footer {
 
 /*Adjusting Styles by Page Width*/
 
-/*Adjusting Article Width On Screens Under 500px Width*/
-@media only screen and (max-width: 500px){
-    .artimage, article {
-        width:80vw;
+/*Adjusting Layout of Mood Tracker Items On Screens Under 1200px Width*/
+@media only screen and (max-width: 1200px){
+    /*Container for Forms and Buttons*/
+    #moodtracker{
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap-reverse;
+    }
+
+    /*Break Between "How are you feeling" and "Select mood"*/
+    .moodbreak{
+        display:none;
+    }
+}
+
+/*Adjusting Mood Tracker Graph Format Width On Screens Under 1000px Width*/
+@media only screen and (max-width: 1000px){
+    /*Mood Graph Width*/
+    .moodcont{
+        width:80%;
+    }
+
+    /*Mood Graph Label Font Size*/
+    .moodbarname {
+        font-size:0.9em;
     }
 }
 
@@ -812,6 +891,16 @@ footer {
         width:70%;
     }
 
+    /*Mood Graph Width*/
+    .moodcont{
+        width:90%;
+    }
+
+    /*Mood Graph Label Font Size*/
+    .moodbarname {
+        font-size:0.8em;
+    }    
+
     /*Inspirational Quote Font Size*/
     aside {
         font-size: 5vw;
@@ -822,12 +911,24 @@ footer {
         width:70vw;
     }
 }
-/*Adjusting Layout of Items On Screens Under 1200px Width*/
-@media only screen and (max-width: 1200px){
-    /*Container for Forms and Buttons*/
-    #moodtracker{
-        display: flex;
-        justify-content: left;
-        flex-wrap: wrap-reverse;
+
+/*Adjusting Mood Tracker Submit Button Positions Width On Screens Under 600px Width*/
+@media only screen and (max-width: 600px){
+    /*Enter New Mood and Update Profile Buttons*/
+    .leftbutton {
+        display:block;
+    }
+    
+    /*Get Mood Trend/Graph and Delete Account Buttons*/
+    .rightbutton {
+        float:left;
     }
 }
+
+/*Adjusting Article Width On Screens Under 500px Width*/
+@media only screen and (max-width: 500px){
+    .artimage, article {
+        width:80vw;
+    }
+}
+
